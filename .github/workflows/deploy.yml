@@ -17,12 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Start container
-        script: 
-            mkdir test
-            cd test
-            git clone git@github.com:nagipee/citestdeploy.git
-            cd citestdeploy
-            docker-compose up --build
+        run: | 
+          mkdir test
+          cd test
+          git clone git@github.com:nagipee/citestdeploy.git
+          cd citestdeploy
+          docker-compose up --build
 
 
 # This workflow contains a single job called "build"
