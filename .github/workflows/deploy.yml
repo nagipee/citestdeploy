@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Start container
         run: | 
+          cd ~
+          ls
+          cd /
           ls
           
 
