@@ -6,4 +6,4 @@ RUN echo "TESTTTTTTTT"
 RUN npm install
 RUN echo "DONE TESTT"
 COPY . .
-CMD ["echo","helllo","|","ls"]
+CMD ["npm","start"]
