@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: Start container
         run: | 
-          mkdir test
-          cd test
           ls
           
 
