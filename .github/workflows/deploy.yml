@@ -16,14 +16,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy React app
-        uses: nagipee/citestdeploy@main
-        with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-          script: |
-            mkdir test
+      - name: Start container
+        run: docker-compose up
+
 
 # This workflow contains a single job called "build"
 #   build:
