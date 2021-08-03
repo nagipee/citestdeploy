@@ -23,7 +23,7 @@ jobs:
       - name: Start container
         run: | 
           doctl compute droplet list
-          doctl compute ssh 257501104
+          doctl compute ssh 257501104 -tt
           echo "im in"
           exit
           
