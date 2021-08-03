@@ -16,16 +16,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
         with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - name: Start container
-        run: |
-          doctl compute droplet list
-          doctl compute ssh 257501104 --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -tt
-          echo "im in"
-          exit
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: whoami
           
 
 
