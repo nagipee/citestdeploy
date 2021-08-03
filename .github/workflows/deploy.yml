@@ -16,15 +16,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: ls -a via ssh
-        uses: fifsky/ssh-action@master
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
         with:
-          command: |
-            cd /tmp
-            ls -a
           host: ${{ secrets.SSH_HOST }}
-          user: root
-          key: ${{ secrets.SSH_KEY_3}}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY_3 }}
+          script: whoami
           
 
 
