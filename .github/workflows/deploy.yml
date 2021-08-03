@@ -16,12 +16,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - name: Start container
         run: | 
-          ssh root@167.71.208.167
-          echo "im in"
-          ls
-          exit
+          doctl compute droplet list
           
 
 
