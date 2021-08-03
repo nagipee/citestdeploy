@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY_3 }}
           script: |
-            cd /app
+            cd ~/app
             docker-compose down
             docker image prune -a
             rm -rf citestdeploy
