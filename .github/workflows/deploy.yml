@@ -21,10 +21,9 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - name: Start container
-        run: | 
-          doctl auth init --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        run: |
           doctl compute droplet list
-          doctl compute ssh 257501104 -tt
+          doctl compute ssh 257501104 -tt --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           echo "im in"
           exit
           
