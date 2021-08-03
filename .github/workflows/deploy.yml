@@ -23,8 +23,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY_3 }}
           script: |
-            mkdir app
             cd app
+            rm -rf citestdeploy
             git clone git@github.com:nagipee/citestdeploy.git
             cd citestdeploy
             docker-compose up --build
